@@ -2,13 +2,10 @@ module BookKeeping
   VERSION = 3
 end
 
-
 class Gigasecond
+  GIGASECOND = 10**9
 
   def self.from(birthday)
-    gigasecond = 10**9
-    birthday_seconds = birthday.to_i
-    return Time.at(gigasecond + birthday_seconds).utc
+    birthday + GIGASECOND
   end
-
 end
