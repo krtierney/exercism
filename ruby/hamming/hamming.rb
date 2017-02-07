@@ -3,19 +3,12 @@ module BookKeeping
 end
 
 class Hamming
-
   def self.compute(first, second)
-    unless first.size == second.size
-      raise ArgumentError
-    end
-    diff = 0
+    raise ArgumentError if first.size != second.size
+    @hamming_distance = 0
     (0..first.size).each do |i|
-      unless first[i] == second[i]
-        diff +=1
-      end
+      @hamming_distance += 1 unless first[i] == second[i]
     end
-    return diff
-    
+    @hamming_distance
   end
-
 end

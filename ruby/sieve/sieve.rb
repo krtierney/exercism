@@ -11,7 +11,7 @@ class Sieve
     array = [*2..@int]
     array.each do |i|
       array.each do |e|
-        if e != i && (e % i).zero? then array.delete(e) end
+        array.delete(e) if e != i && (e % i).zero?
       end
     end
   end

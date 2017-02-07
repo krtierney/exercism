@@ -3,8 +3,9 @@ module BookKeeping
 end
 
 class Pangram
-  A_TO_Z = [*65..90]
+  DEC_A_TO_Z = [*65..90]
+
   def self.pangram?(phrase)
-    A_TO_Z - phrase.upcase.bytes == [] ? true : false
+    (DEC_A_TO_Z - phrase.upcase.bytes).empty?
   end
 end
