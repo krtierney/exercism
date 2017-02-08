@@ -8,6 +8,6 @@ class Complement
   # Accepts a DNA nucleotide abbreviation, returns RNA complement
   def self.of_dna(dna)
     rna = dna.each_char.map { |d| DNA_TO_RNA[d] }
-    rna.compact.length != dna.length ? '' : rna.join
+    rna.compact.length == dna.length ? rna.join : '' 
   end
 end
