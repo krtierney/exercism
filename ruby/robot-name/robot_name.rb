@@ -1,7 +1,13 @@
+module BookKeeping
+  VERSION = 2
+end
+
 class Robot
-  NAME_REGEXP = /^[A-Z]{2}\d{3}$/
+  @@prior_names = []
 
   def initialize
+    @name = self.name
+    @@prior_names << @name
   end
 
   def name
@@ -9,6 +15,9 @@ class Robot
   end
 
   def reset
-    @name = # Figure out how to generate new pattern matching the regex
+    name = []
+    2.times { name << ('A'..'Z').to_a.sample }
+    3.times { name << [*1..9].sample.to_s }
+    @name = name.join unless @@prior_names.include? name.join
   end
 end

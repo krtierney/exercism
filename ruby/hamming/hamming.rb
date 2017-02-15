@@ -4,11 +4,9 @@ end
 
 class Hamming
   def self.compute(first, second)
-    raise ArgumentError if first.size != second.size
-    @hamming_distance = 0
-    (0..first.size).each do |i|
-      @hamming_distance += 1 unless first[i] == second[i]
+    raise ArgumentError unless first.size == second.size
+    first.chars.zip(second.chars).count do |a, b|
+      a != b
     end
-    @hamming_distance
   end
 end

@@ -4,14 +4,11 @@ end
 
 class Raindrops
   def self.convert(int)
-    @result = []
-    if (int % 3).zero? then @result << 'Pling' end
-    if (int % 5).zero? then @result << 'Plang' end
-    if (int % 7).zero? then @result << 'Plong' end
-    if @result == []
-      int.to_s
-    else
-      @result.join.to_s
-    end
+    result = []
+    result << 'Pling' if (int % 3).zero?
+    result << 'Plang' if (int % 5).zero?
+    result << 'Plong' if (int % 7).zero?
+    return int.to_s if result.empty?
+    result.join.to_s
   end
 end

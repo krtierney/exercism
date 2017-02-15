@@ -8,20 +8,11 @@ class Squares
   end
 
   def square_of_sum
-    sum = 0
-    (1..@int).each do |i|
-      sum += i
-    end
-    sum**2
+    (1..@int).inject(&:+).to_i**2
   end
 
   def sum_of_squares
-    sum_of_squares = 0
-    squares = [*1..@int].map { |i| i**2 }
-    squares.each do |i|
-      sum_of_squares += i
-    end
-    sum_of_squares
+    (1..@int).inject(0) { |sum, n| sum + n**2 }
   end
 
   def difference

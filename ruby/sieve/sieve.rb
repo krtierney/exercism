@@ -8,10 +8,10 @@ class Sieve
   end
 
   def primes
-    array = [*2..@int]
-    array.each do |i|
-      array.each do |e|
-        array.delete(e) if e != i && (e % i).zero?
+    possible_primes = [*2..@int]
+    possible_primes.each do |each|
+      possible_primes.each do |int|
+        possible_primes.delete(int) if int != each && (int % each).zero?
       end
     end
   end
