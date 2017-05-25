@@ -8,11 +8,8 @@ class Phrase
   end
 
   def word_count
-    counts = {}
-    normalize(@phrase).each do |word|
-      counts[word] += 1 if counts[word]
-      counts[word] = 1 unless counts[word]
-    end
+    counts = Hash.new(0)
+    normalize(@phrase).each { |word| counts[word] += 1 if counts[word] }
     counts
   end
 
