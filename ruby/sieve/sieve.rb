@@ -5,6 +5,7 @@ end
 class Sieve
   def initialize(int)
     @int = int
+    @primes = primes
   end
 
   def primes
